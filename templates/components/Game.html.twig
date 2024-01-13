@@ -1,0 +1,9 @@
+<div{{attributes}}>
+	<div class="game">
+		{% for row, asteroid in asteroids %}
+			<div class="asteroid" style="--column:{{ asteroid + 1 }}; --row: {{ row + 1}}">#</div>
+		{% endfor %}
+	</div>
+
+	<button data-action="live#action" data-action-name="addAsteroid">Add asteroids</button>
+</div>
