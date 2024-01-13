@@ -16,3 +16,9 @@ body {
     grid-column: var(--column);
     grid-row: var(--row);
 }
+
+.spaceship{
+    grid-column: var(--column);
+    grid-row: var(--row);
+}
+

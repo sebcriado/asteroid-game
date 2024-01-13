@@ -3,7 +3,13 @@
 		{% for row, asteroid in asteroids %}
 			<div class="asteroid" style="--column:{{ asteroid + 1 }}; --row: {{ row + 1}}">#</div>
 		{% endfor %}
+		<div class="spaceship" style="--column:{{ spaceship + 1 }}; --row: 10">V</div>
+
+
 	</div>
 
 	<button data-action="live#action" data-action-name="toggleRunning">{{ isRunning ? 'Pause' : 'Start' }}</button>
+
+	<button data-action="live#action" data-action-name="moveLeft">Left</button>
+	<button data-action="live#action" data-action-name="moveRight">Right</button>
 </div>

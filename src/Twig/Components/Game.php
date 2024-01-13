@@ -18,6 +18,9 @@ final class Game
     #[LiveProp()]
     public bool $isRunning = false;
 
+    #[LiveProp()]
+    public int $spaceship = 5;
+
     public function __construct()
     {
         if(empty($this->asteroids)){
@@ -39,6 +42,22 @@ final class Game
     public function toggleRunning()
     {
         $this->isRunning = !$this->isRunning;
+    }
+
+    #[LiveAction]
+    public function moveLeft()
+    {
+        if ($this->spaceship > 0 && $this->isRunning) {
+            $this->spaceship--;
+        }
+    }
+
+    #[LiveAction]
+    public function moveRight()
+    {
+        if ($this->spaceship < 9 && $this->isRunning) {
+            $this->spaceship++;
+        }
     }
 
 
