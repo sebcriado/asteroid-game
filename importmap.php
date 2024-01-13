@@ -27,4 +27,7 @@ return [
     '@hotwired/turbo' => [
         'url' => 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@7.3.0/+esm',
     ],
+    '@symfony/ux-live-component' => [
+        'path' => '@symfony/ux-live-component/live_controller.js',
+    ],
 ];

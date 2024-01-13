@@ -1,4 +1,4 @@
-<div{{attributes}} {% if isRunning %} data-poll="delay({{ max(30, 300 - score) }})|addAsteroid" {% endif %}>
+<div{{attributes.defaults(stimulus_controller('game'))}} {% if isRunning %} data-poll="delay({{ max(30, 300 - score) }})|addAsteroid" {% endif %} data-action="keydown.left@document->game#moveLeft keydown.right@document->game#moveRight">
 	<dialog {{ gameOver ?'open'}}>Game Over</dialog>
 	<div>Score:
 		{{ score }}
@@ -8,12 +8,7 @@
 			<div class="asteroid" style="--column:{{ asteroid + 1 }}; --row: {{ row + 1}}">#</div>
 		{% endfor %}
 		<div class="spaceship" style="--column:{{ spaceship + 1 }}; --row: 10">V</div>
-
-
 	</div>
 
 	<button {{ gameOver ? 'disabled'}} data-action="live#action" data-action-name="toggleRunning">{{ isRunning ? 'Pause' : 'Start' }}</button>
-
-	<button data-action="live#action" data-action-name="moveLeft">Left</button>
-	<button data-action="live#action" data-action-name="moveRight">Right</button>
 </div>
