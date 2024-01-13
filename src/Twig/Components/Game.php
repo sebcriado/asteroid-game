@@ -19,6 +19,9 @@ final class Game
     public bool $isRunning = false;
 
     #[LiveProp()]
+    public bool $gameOver = false;
+
+    #[LiveProp()]
     public int $spaceship = 5;
 
     public function __construct()
@@ -31,6 +34,10 @@ final class Game
     #[LiveAction]
     public function addAsteroid()
     {
+        if(isset($this->asteroids[9]) && $this->spaceship === $this->asteroids[9]){
+            $this->gameOver = true;
+            $this->isRunning = false;
+        }
         array_unshift($this->asteroids, rand(0, 9));
 
         if(count($this->asteroids) > 10){

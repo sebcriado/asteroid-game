@@ -1,4 +1,5 @@
 <div{{attributes}} {% if isRunning %} data-poll="delay(300)|addAsteroid" {% endif %}>
+	<dialog {{ gameOver ?'open'}}>Game Over</dialog>
 	<div class="game">
 		{% for row, asteroid in asteroids %}
 			<div class="asteroid" style="--column:{{ asteroid + 1 }}; --row: {{ row + 1}}">#</div>
@@ -8,7 +9,7 @@
 
 	</div>
 
-	<button data-action="live#action" data-action-name="toggleRunning">{{ isRunning ? 'Pause' : 'Start' }}</button>
+	<button {{ gameOver ? 'disabled'}} data-action="live#action" data-action-name="toggleRunning">{{ isRunning ? 'Pause' : 'Start' }}</button>
 
 	<button data-action="live#action" data-action-name="moveLeft">Left</button>
 	<button data-action="live#action" data-action-name="moveRight">Right</button>
