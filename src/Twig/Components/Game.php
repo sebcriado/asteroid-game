@@ -15,6 +15,9 @@ final class Game
     #[LiveProp()]
     public array $asteroids = [];
 
+    #[LiveProp()]
+    public bool $isRunning = false;
+
     public function __construct()
     {
         if(empty($this->asteroids)){
@@ -30,6 +33,12 @@ final class Game
         if(count($this->asteroids) > 10){
             array_pop($this->asteroids);
         }
+    }
+
+    #[LiveAction]
+    public function toggleRunning()
+    {
+        $this->isRunning = !$this->isRunning;
     }
 
 
