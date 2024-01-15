@@ -1,6 +1,11 @@
 body {
     background-image: url(../images/space.jpeg);
     background-size: cover;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
 }
 
 .title{
@@ -9,6 +14,7 @@ body {
     font-size: 50px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-shadow: 2px 2px 2px black;
+    margin: 0px;
 }
 
 .score{
@@ -50,8 +56,22 @@ body {
     background-image: url(../images/explode.png);
 }
 
+dialog{
+    border: none;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.btn-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
 .start-btn{
-    margin: auto;
     background-color: darksalmon;
     border: none;
     width: 100px;
@@ -60,6 +80,7 @@ body {
     font-size: 15px;
     font-weight: 900;
 }
+
 
 .start-btn:hover{
     background-color: teal;
